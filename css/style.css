@@ -710,7 +710,7 @@ a {
     position: relative; }
     .discord-add__step:not(:last-child)::after {
       position: absolute;
-      content: url("/img/arrow.png");
+      content: url("../img/arrow.png");
       transform: rotate(90deg);
       right: 0;
       top: 40%; }
