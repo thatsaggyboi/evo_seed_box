@@ -251,7 +251,7 @@ a {
             padding: 1.3rem 6rem; } }
     @media (min-width: 545px) {
       .light_grey_bg .hero {
-         } }
+         height:80vh} }
     @media (min-width: 914px) {
       .light_grey_bg .hero {
         flex-direction: row; }
