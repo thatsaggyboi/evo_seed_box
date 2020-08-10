@@ -544,7 +544,7 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
   align-items: end; }
   .prod-det__box1 {
-    background: url("/img/undraw_happy_announcement_ac67.png");
+    background: url("./img/undraw_happy_announcement_ac67.png");
     background-repeat: no-repeat;
     background-size: 20rem;
     background-position: top;
@@ -554,7 +554,7 @@ a {
     line-height: 1.4;
     margin-bottom: 4rem; }
   .prod-det__box2 {
-    background: url("/img/undraw_going_offline_ihag.png");
+    background: url("./img/undraw_going_offline_ihag.png");
     height: 20vh;
     background-repeat: no-repeat;
     background-size: 10rem;
@@ -565,7 +565,7 @@ a {
     line-height: 1.4;
     margin-bottom: 4rem; }
   .prod-det__box3 {
-    background: url("/img/undraw_team_spirit_hrr4.png");
+    background: url("./img/undraw_team_spirit_hrr4.png");
     height: 20vh;
     background-repeat: no-repeat;
     background-size: 20rem;
@@ -576,7 +576,7 @@ a {
     line-height: 1.4;
     margin-bottom: 4rem; }
   .prod-det__box4 {
-    background: url("/img/undraw_having_fun_iais.png");
+    background: url("./img/undraw_having_fun_iais.png");
     height: 20vh;
     background-repeat: no-repeat;
     background-size: 20rem;
