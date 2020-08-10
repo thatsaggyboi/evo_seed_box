@@ -1,0 +1,155 @@
+// abstracts
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+// base
+@import "base/base";
+@import "base/utilities";
+
+// layouts
+.motab-navigation {
+   
+    &__checkbox {
+        display: none;
+    }
+
+    &__button {
+        background-color: white;
+        height:5rem;
+        width: 5rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 1.5rem;
+        right: 1rem;
+        z-index: 2000;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    &__background {
+        height:3rem;
+        width: 3rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 2rem;
+        right: 1.5rem;
+        background-image: radial-gradient(color(primary), color(secondary));
+        z-index: 1000;
+        transition: all .6s ease-in-out;
+        //transform: scale(80);
+    }
+
+    &__nav {
+        height: 100vh;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1500;
+        opacity: 0;
+        transition: all .6s ease-in-out;
+    }
+
+    &__list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        
+    }
+
+    &__item {
+
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            padding: 1rem 2rem;
+            display: inline-block;
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+            background-size: 230%;
+            transition: all .4s;
+        } 
+
+        &:hover {
+            background-position: 100%;
+            color: color(secondary);
+            transform: translateX(1rem);
+        }
+    }
+
+    &__checkbox:checked ~ &__background {
+        transform: scale(110);
+    }
+
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
+    }
+
+    &__icon {
+        position: relative;
+        margin-top: 2.3rem;
+
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: .3rem;
+            background: color(primary);
+            display: inline-block;
+        }
+
+        &::before, 
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before {
+            top: -.8rem;
+        }
+
+        &::after {
+            top: .8rem;
+        }
+    }
+
+    &__button:hover &__icon::before {
+        top: -1rem;
+    }
+
+    &__button:hover &__icon::after {
+        top: 1rem;
+    } 
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    
+    
+    @include large {
+        display: none;
+    }
+
+}
+
+@import "layoutss/layout";
