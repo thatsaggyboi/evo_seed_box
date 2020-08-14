@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-
+    <div class="preloader">
+        <div class="preloader__counter">0</div>
+    </div>
     <div class="motab-navigation">
         <input type="checkbox" class="motab-navigation__checkbox" id="navi-toggle">
 
@@ -497,6 +499,23 @@
         //console.log(tl.progress());
         }
         
+    </script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        function counter() {
+            var count = setInterval(function() {
+                var c = parseInt($('.preloader__counter').text());
+                $('.preloader__counter').text((++c).toString());
+                if (c == 100) {
+                    clearInterval(count);
+                    $('.preloader__counter').addClass('hide')
+                    $('.preloader').addClass('active')
+                } 
+            },20)
+        }
+        counter()
     </script>
 </body>
 </html>
