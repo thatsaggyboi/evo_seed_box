@@ -8,6 +8,64 @@
 @import "base/utilities";
 
 // layouts
+
+.preloader {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: color(secondary);
+    z-index: 10000000;
+
+    &::before {
+        content: "Loading";
+        position: absolute;
+        font-size: 9rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: rgba(255,255,255,.1);
+
+        @include medium-v2 {
+            font-size: 15rem;
+        }
+    }
+
+    &__counter {
+        position: relative;
+        color: white;
+        font-size: 9rem;
+        font-weight: bold;
+        z-index: 1;
+
+        &::after {
+            content: "%";
+            font-size: 7rem;
+        }
+
+        @include medium-v2 {
+            font-size: 18rem;
+        }
+
+        
+    }
+
+    .hide {
+        opacity: 0;
+        transition: 1s;
+        pointer-events: none;
+    }
+}
+
+.preloader.active {
+    transform: translateY(-100vh);
+    transition: ease-in-out 2s;
+    //transition-delay: 1s;
+}
+
+
 .motab-navigation {
    
     &__checkbox {
